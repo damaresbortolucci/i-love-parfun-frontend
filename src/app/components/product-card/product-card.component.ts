@@ -39,19 +39,19 @@ export class ProductCardComponent implements OnInit {
   }
 
 
-  addToCart(product: Product){
+  addToCart=(product: Product) => {
     this.cartService.addProductCart(product);
   }
 
 
-  addItem(product: Product):void{
+  addItem = (product: Product):void => {
     if(product.quantity == product.stock)
         product.quantity = product.stock;
     else
       product.quantity++;
   }
 
-  removeItem(product: Product):void{
+  removeItem = (product: Product):void => {
     if(product.quantity==1)
       product.quantity = 1;
     else
@@ -59,7 +59,7 @@ export class ProductCardComponent implements OnInit {
   }
 
   
-  accessRole(): boolean{
+  accessRole= ():boolean => {
     this.user = this.authService.getUser();
     return this.user?.role == 'cliente' || this.user?.role == null;
   }

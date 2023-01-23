@@ -19,7 +19,7 @@ export class RegisterComponent implements OnInit {
 
   id: string = "";
   user: any = 'cliente';
-  requestType: string = "post";
+  @Input() requestType: string = "post";
 
   constructor(
     private usersService: UsersService,
@@ -28,13 +28,6 @@ export class RegisterComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private authService: AuthService
   ) {}
-
-  getErrorMessage() {
-    if (this.email.hasError('required')) {
-      return 'You must enter a value';
-    }
-    return this.email.hasError('email') ? 'Not a valid email' : '';
-  }
 
 
   cadastroForm = this.formBuilder.group({
@@ -73,7 +66,7 @@ export class RegisterComponent implements OnInit {
       this.cadastroForm.value.nome ?? '',
       this.cadastroForm.value.email ?? '',
       this.cadastroForm.value.senha ?? '',
-      this.cadastroForm.value.role || "cliente",
+      this.cadastroForm.value.role ?? '',
       ''
     );
 

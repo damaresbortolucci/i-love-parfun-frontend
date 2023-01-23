@@ -47,7 +47,7 @@ export class CartService {
   }
 
 
-  updateCart(products: Product[]){
+  updateCart = (products: Product[]) =>{
     let totalItems: number = 0    
     products.map((product:Product) => totalItems += product.quantity);
 
@@ -62,14 +62,20 @@ export class CartService {
   }
 
 
-  deleteProductCart(product: Product){
+  deleteProductCart = (product: Product) =>{
     this.cart = JSON.parse(localStorage.getItem('cart') as string);
     let newCart = this.cart.product.filter((prod:any) => prod._id !==  product._id);
 
     this.updateCart(newCart)
   }
 
-  clearCart(){
+
+  getProducts = (): Cart => {
+    return JSON.parse(localStorage.getItem('cart') as string)
+  }
+
+
+  clearCart = () =>{
     localStorage.removeItem('cart');
   }
 }

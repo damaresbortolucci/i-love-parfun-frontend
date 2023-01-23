@@ -18,20 +18,17 @@ export class CartComponent implements OnInit {
   ){}
 
   ngOnInit(): void {
-    let cart = JSON.parse(localStorage.getItem('cart') as string)
+    /* pega o valor inicial no localstorage */
+    let cart = this.cartService.getProducts();
     if(cart!=null){
       this.productsCart = cart.product;
       this.subTotal = cart.valueTotal;
     }
+
  
     this.cartService.getItemsCart().subscribe(
       (product) => {
         this.productsCart = product.product
-      }
-    );
-
-    this.cartService.getItemsCart().subscribe(
-      (product) => {
         this.subTotal = product.valueTotal
       }
     );

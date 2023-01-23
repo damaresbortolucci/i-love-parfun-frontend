@@ -1,4 +1,3 @@
-import { RoleService } from './../../services/role.service';
 import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
 import { TokenService } from '../../services/token.service';
@@ -23,18 +22,18 @@ export class HeaderComponent implements OnInit {
     private router: Router,
     private authService: AuthService,
     private cartService: CartService,
-    private roleService: RoleService
   ){
     this.isCollapsed = true;
   }
 
 
   ngOnInit(): void {
-   
-    let cart = JSON.parse(localStorage.getItem('cart') as string)
+    /* pega o valor inicial no localstorage */
+    let cart = this.cartService.getProducts();
     if(cart!=null)
       this.items = cart.quantity;
 
+    /* atualiza conforme mudança no localstorage */
     this.cartService.getItemsCart().subscribe(
       (product) => {this.items = product.quantity}
     );

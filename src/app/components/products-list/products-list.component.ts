@@ -53,7 +53,7 @@ export class ProductsListComponent implements OnInit {
   }
 
 
-  deleteProduct(product: Product){
+  deleteProduct = (product: Product) => {
     this.productService.removerProduto(product).subscribe({
       next: (response) => {
         this.products = this.products.filter(

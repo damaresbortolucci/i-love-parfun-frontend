@@ -41,13 +41,10 @@ export class UsersListComponent {
     });
 
 
-    this.searchField.valueChanges // Estou com a referência do observable de mudança
+    this.searchField.valueChanges
     .pipe(
       debounceTime(300),
       distinctUntilChanged(),
-      // map
-      // transformar um valor em outro
-      // pega o valor do input e transforma -> fazer uma api e devolver o resultado
       switchMap((nome) => this.userService.buscaUsuario(nome))
     )
     .subscribe((usuarios) => (this.users = usuarios));

@@ -24,9 +24,11 @@
                   <label for="quantity" class="form-label">Estoque</label>
                   <input type="text" class="form-control" id="stock" formControlName="stock">
               </div>
-              <button class="submit-btn btn btn-light" type="submit">
-                {{ requestType == "post"? "Cadastrar" : "Atualizar" }}
-              </button>
+              <div class="btn-form">
+                  <button class="btn" type="submit">
+                    {{ requestType == "post"? "Cadastrar" : "Atualizar" }}
+                  </button>
+              </div>
           </form>
       </div>
   </div>

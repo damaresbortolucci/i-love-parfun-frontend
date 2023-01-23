@@ -35,7 +35,7 @@ export class SumaryDetailsComponent{
 		this.modalService.open(content, { centered: true,  size: 'sm'});
 	}
 
-  deleteProduct(){
+  deleteProduct = () => {
     this.cartService.clearCart();
     this.router.navigate(['/home']);
     this.modalService.dismissAll();
