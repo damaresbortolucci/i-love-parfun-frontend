@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+h1{
+  color: #fff;
+  color: rgb(13, 11, 59);
+  margin-bottom: 30px;
+  margin-left: 50px;
+}
+
+.product-container{
+  width: 80%;
+  height: 100%;
+  min-height: calc(100vh - 195px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  padding: 100px  0;
+}
+
+.cards-list{
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.card-item{
+  height: 100%;
+  min-height: 400px;
+}
+
+.card-text{
+  min-height: 120px;
+  font-size: 14px;
+}
+
+.outOfStock{
+  color: red;
+}
+
+input[type=number] {
+  max-width: 2.5em;
+  width: 2.5em;
+  height: 29px;
+  font-size: 1em;
+  text-align: center;
+  border: none;
+  outline: none;
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none;
+}
+
+.quantity-input{
+  border: 1px solid rgb(224, 223, 223);
+  border-radius: 3px;
+}
+
+.btn-shop{
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.btn-card-home {
+  text-align: center;
+  border-radius: 25px;
+  padding: 6px;
+  width: 110px;
+  border: none;
+  background-color: rgb(254, 78, 113);
+  color: white;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-card-home:hover{
+  background-color: rgb(211, 44, 77);
+}
+
+.minus,
+.plus{
+  height: 35px;
+  border: none;
+}
+
+.teste{
+  display: flex;
+}
+
+.carrossel-item{
+  width: 100%;
+  margin: auto;
+}
+
+.carrossel-item img{
+  width: 100%;
+}
+
+.carousel-caption h3{
+  font-family: 'Roboto', sans-serif !important;
+  font-size: 30px;
+}
+
+.information{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 180px;
+  background-color: rgb(225, 225, 225);
+  padding: 0 50px;
+}
+
+.information div{
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.information i {
+  font-size: 70px;
+  color: rgb(133, 131, 131);
+  /* color: black; */
+}
+
+.information span {
+  font-size: 20px;
+}

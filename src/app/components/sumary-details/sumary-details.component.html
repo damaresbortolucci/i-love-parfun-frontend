@@ -1,0 +1,58 @@
+<div class="sumary-cart">
+    <h1>
+        Resumo do carrinho
+    </h1>
+    <div>  
+        <p class="cart-empty" *ngIf="products?.length==0">
+            Seu carrinho está vázio
+        </p>
+        <ul>
+            <li *ngFor="let product of products">
+                <div class="description-quantity">
+                    <span>{{product.title}}</span>
+                    <span>x{{product.quantity}}</span>
+                </div>
+                <span>{{product.quantity * product.price | currency:'BRL':'symbol':'1.2-2':'pt'}}</span>
+            </li>
+        </ul>
+    </div>
+    <div class="sumary__subtotal"  *ngIf="products?.length!=0">
+        <ul>
+            <li>
+                <span>Subtotal</span>
+                <span>{{subTotal | currency:'BRL':'symbol':'1.2-2':'pt'}}</span>
+            </li>
+            <li>
+                <span>Taxas</span>
+                <span>{{subTotal * 0.05 | currency:'BRL':'symbol':'1.2-2':'pt'}}</span>
+            </li>
+            <li>
+                <span>Total</span>
+                <span>{{subTotal + (subTotal * 0.05) | currency:'BRL':'symbol':'1.2-2':'pt'}}</span>
+            </li>
+        </ul>
+    </div>
+    <div class="sumary__btn">
+        <button type="submit" *ngIf="products?.length!=0" (click)="openDeleteModal(contentDelete)">
+            finalizar compra 
+        </button>
+        <button type="submit" [routerLink]="['/home']">
+            {{products?.length==0 ? 'voltar para home' : 'continar comprando'}} 
+        </button>
+    </div>
+
+    <ng-template #contentDelete let-modal>
+        <div class="modal-header">
+          <h4 class="modal-title">Pagamento</h4>
+          <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+        </div>
+        <div class="modal-body">
+          <p>Você será direcionado(a) para a tela de pagamento.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-dark" (click)="deleteProduct()">Continuar</button>
+        </div>
+    </ng-template>
+</div>
+
+
