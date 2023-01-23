@@ -1,7 +1,7 @@
 <div class="container__cart">
     <div class="data__cart">
-        <div>
-            <div class="items__cart" *ngFor="let product of productsCart">
+        <div class="card-list">
+            <div class="item__cart" *ngFor="let product of productsCart">
                 <img src="{{ product.image }}" class="me-2" style="width: 90px" />
                 <span>
                     {{product.title | titlecase}}
