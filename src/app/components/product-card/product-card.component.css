@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
 h1{
   color: #fff;
   color: rgb(13, 11, 59);
@@ -95,10 +94,10 @@ input[type=number]::-webkit-outer-spin-button {
   display: flex;
 }
 
-.carrossel-item{
-  width: 100%;
-  margin: auto;
-}
+
+
+/* carousel */
+
 
 .carrossel-item img{
   width: 100%;
@@ -109,28 +108,60 @@ input[type=number]::-webkit-outer-spin-button {
   font-size: 30px;
 }
 
-.information{
+
+
+/* facilities */
+
+
+.facility-container{
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
-  height: 180px;
+  height: 100%;
+  min-height: 180px;
   background-color: rgb(225, 225, 225);
-  padding: 0 50px;
+  padding: 30px 50px;
+  flex-wrap: wrap;
 }
 
-.information div{
+.facility-item{
   display: flex;
-  gap: 25px;
+  gap: 16px;
   flex-wrap: wrap;
   align-items: center;
 }
 
-.information i {
-  font-size: 70px;
-  color: rgb(133, 131, 131);
-  /* color: black; */
+.facility-item div{
+  display: flex;
+  flex-direction: column;
 }
 
-.information span {
-  font-size: 20px;
+.facility-item .facility-logo{
+  border: 1.5px solid black;
+  padding: 5px 15px;
+  border-radius: 50%;
+}
+
+.facility-logo i {
+  font-size: 36px;
+  color: black;
+}
+
+/* Título */
+.facility-description :nth-child(1){
+  color: #000;
+  font-weight: bold;
+}
+
+.facility-description :nth-child(2){
+  font-size: 16px;
+}
+
+
+@media screen and (max-width: 1100px){
+  .facility-container{
+    display: flex;
+    justify-content: flex-start;
+    gap: 15px 30px;
+  }
 }

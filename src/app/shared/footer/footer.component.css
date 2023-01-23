@@ -1,8 +1,8 @@
 .footer-container{
-    /* background-color: #3F3B47; */
     background-color: rgb(39, 39, 39);
-    height: 110px;
+    min-height: 110px;
     width: 100%;
+    padding: 0 30px;
     display: flex;
     justify-content: space-around;
     flex-shrink: 0;
@@ -44,4 +44,12 @@
 .contact-icons i:hover{
     color: rgb(254, 78, 113);
     transition: all 0.3s ease-in-out;
+}
+
+@media screen and (max-width: 600px){
+    .footer-container{
+      flex-direction: column;
+      padding: 10px 30px;
+    }
+
 }

@@ -1,28 +1,16 @@
-.header-container{
+.navbar{
     background-color: rgb(39, 39, 39);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 100;
+    padding: 8px 100px;
 }
 
-.header-container .header{
-    margin: auto;
-    width: 65%;
-    height: 85px;
-    justify-content: space-between !important;
-}
-
-.header-container .header h1{
+.navbar h1{
     cursor: pointer;
     margin: 0;
     font-size: 32px;
     color: rgb(254, 78, 113);
-   display: flex;
-   align-items: center;
-   gap: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
 .bi-heart-fill{
@@ -30,22 +18,15 @@
     font-size: 24px;
 }
 
-.bi-ticket-perforated-fill{
-    color: white;
-    font-size: 36px;
-}
-
 .active {
     border-bottom: 3px solid rgb(254, 78, 113);
 }
+
 
 .cart-section{
     cursor: pointer;
 }
 
-.border-bottom {
-    border-bottom: none !important;
-}
 
 .menu-links{
     font-size: 14px;
@@ -53,8 +34,11 @@
     gap: 8px;
     text-transform: uppercase;
     letter-spacing: 0.1em;
+    margin-top: 20px;
 }
 
+
+/*  a */
 .menu-links .nav-item .nav-link{
     color: white;
 }
@@ -63,22 +47,18 @@
     font-size: 22px;
 }
 
-.sub-nav{
-    width: 100%;
-    height: 45px;
-    border-bottom: 1px solid rgb(226, 225, 225);
-    background-color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 50px;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    font-size: 14px;
+
+@media screen and (max-width: 1000px){
+    
+    .navbar{
+        padding: 8px 50px;
+    }
 }
 
-.sub-nav span:hover{
-    color: rgb(163, 161, 161);
-    transition: all 0.3s ease-in-out;
-    cursor: pointer;
+
+@media screen and (max-width: 575px){
+    
+    .navbar{
+        padding: 20px 20px;
+    }
 }

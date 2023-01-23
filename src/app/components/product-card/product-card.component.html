@@ -1,3 +1,6 @@
+
+<!-- carousel -->
+
   <ngb-carousel class="carrossel-item">
     <ng-template ngbSlide>
       <div class="picsum-img-wrapper">
@@ -19,28 +22,43 @@
     </ng-template>
   </ngb-carousel>
 
-  <div class="information">
-    <div>
-      <i class="bi bi-credit-card-2-back"></i>
-      <span>Parcelamento em até 10x</span>
-    </div>
-    <div>
-      <i class="bi bi-coin"></i>
-      <span>10% de desconto na primeira compra</span>
-    </div>
-    <div>
-      <i class="bi bi-truck"></i>
-      <span>Envio com seguro pelos Correios</span>
-    </div>
+  <!-- seção vantagens -->
 
+  <div class="facility-container">
+    <div class="facility-item">
+      <div class="facility-logo">
+        <i class="bi bi-credit-card-2-front"></i>
+      </div>
+      <div class="facility-description">
+        <span>Pague no cartão</span>
+        <span>em até 10x sem juros</span>
+      </div>
+    </div>
+    <div class="facility-item">
+      <div class="facility-logo">
+        <i class="bi bi-coin"></i>
+      </div>
+      <div class="facility-description">
+        <span>Desconto</span>
+        <span>10% de desconto na primeira compra</span>
+      </div>
+    </div>
+    <div class="facility-item">
+      <div class="facility-logo">
+        <i class="bi bi-truck"></i>
+      </div>
+      <div class="facility-description">
+        <span>Frete Grátis</span>
+        <span>nas compras acima de R$ 300,00</span>
+      </div>
+    </div>
   </div>
 
 
+<!-- cards -->
 
 <div class="product-container">
-
   <!-- <h2>Mais Vendidos</h2> -->
-
   <div class="cards-list">
     <div class="card card-item" style="width: 18rem;" *ngFor="let product of products" [ngSwitch]="accessRole()">
       <img src="{{ product.image }}" height="165px" width="250px" class="card-img-top" alt="Foto de {{ product.title}}">
