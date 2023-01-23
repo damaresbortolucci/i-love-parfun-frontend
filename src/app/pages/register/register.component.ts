@@ -92,6 +92,6 @@ export class RegisterComponent implements OnInit {
 
   accessRole(): boolean{
     this.user = this.authService.getUser();
-    return this.user.role == 'cliente' || this.user.role == null;
+    return this.user?.role == 'cliente' || this.user?.role == null;
   }
 }
