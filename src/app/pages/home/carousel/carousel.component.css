@@ -1,0 +1,8 @@
+.carrossel-item img{
+    width: 100%;
+  }
+  
+  .carousel-caption h3{
+    font-family: 'Roboto', sans-serif !important;
+    font-size: 30px;
+  }

@@ -1,0 +1,25 @@
+h1{
+    color: #fff;
+    color: rgb(13, 11, 59);
+    margin-bottom: 30px;
+    margin-left: 50px;
+}
+  
+.product-container{
+  width: 80%;
+  height: 100%;
+  min-height: calc(100vh - 195px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  padding: 100px  0;
+}
+  
+.cards-list{
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}

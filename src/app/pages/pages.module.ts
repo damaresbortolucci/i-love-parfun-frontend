@@ -17,6 +17,14 @@ import { registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt';
 import { UsersComponent } from './users/users.component';
 import { ComponentsModule } from '../components/components.module';
+import { CartItemComponent } from './cart/cart-item/cart-item.component';
+import { SumaryDetailsComponent } from './cart/sumary-details/sumary-details.component';
+import { UsersListComponent } from './users/users-list/users-list.component';
+import { HomeComponent } from './home/home.component';
+import { CarouselComponent } from './home/carousel/carousel.component';
+import { BannerAdvantagesComponent } from './home/banner-advantages/banner-advantages.component';
+import { ProductCardComponent } from './home/product-card/product-card.component';
+import { ProductsListComponent } from './products/products-list/products-list.component';
 
 
 registerLocaleData(localePt);
@@ -29,6 +37,14 @@ registerLocaleData(localePt);
     RegisterComponent,
     CartComponent,
     PageNotFoundComponent,
+    CartItemComponent,
+    SumaryDetailsComponent,
+    UsersListComponent,
+    HomeComponent,
+    CarouselComponent,
+    BannerAdvantagesComponent,
+    ProductCardComponent,
+    ProductsListComponent
   ],
   imports: [
     CommonModule, 

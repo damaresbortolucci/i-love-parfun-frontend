@@ -1,13 +1,14 @@
+import { HomeComponent } from './pages/home/home.component';
 import { UsersComponent } from './pages/users/users.component';
-import { UsersListComponent } from './components/users-list/users-list.component';
+import { UsersListComponent } from './pages/users/users-list/users-list.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { AuthService } from './services/auth.service';
 import { ProductsComponent } from './pages/products/products.component';
-import { ProductCardComponent } from './components/product-card/product-card.component';
+import { ProductCardComponent } from './pages/home/product-card/product-card.component';
 import { ProductFormComponent } from './shared/product-form/product-form.component';
-import { ProductsListComponent } from './components/products-list/products-list.component';
+import { ProductsListComponent } from './pages/products/products-list/products-list.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
@@ -15,7 +16,7 @@ import { CartComponent } from './pages/cart/cart.component';
 
 
 const routes: Routes = [
-  { path:"home", component: ProductCardComponent},
+  { path:"home", component: HomeComponent},
 
   { path:"produtos", component: ProductsComponent, 
     canActivate: [AuthService],

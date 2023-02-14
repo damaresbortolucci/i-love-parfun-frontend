@@ -1,0 +1,11 @@
+<app-carousel></app-carousel>
+
+<app-banner-advantages></app-banner-advantages>
+
+<div class="product-container">
+    <!-- <h2>Mais Vendidos</h2> -->
+    <div class="cards-list">
+        <app-product-card *ngFor="let product of products" [product]="product">
+        </app-product-card>
+    </div>
+</div>

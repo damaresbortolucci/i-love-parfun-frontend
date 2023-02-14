@@ -1,10 +1,9 @@
-import { CartService } from 'src/app/services/cart.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, Input, ViewChild } from '@angular/core';
 
 import { AuthService } from 'src/app/services/auth.service';
-import { ProductService } from '../../services/product.services';
+import { CartService } from 'src/app/services/cart.service';
 import Product from 'src/app/models/Product';
-import User from 'src/app/models/User';
+
 
 
 @Component({
@@ -12,52 +11,39 @@ import User from 'src/app/models/User';
   templateUrl: './product-card.component.html',
   styleUrls: ['./product-card.component.css']
 })
-export class ProductCardComponent implements OnInit {
+export class ProductCardComponent {
 
-  products: Product[] = [];
   hasError: boolean = false;
   user?: any;
 
-  value: number =1;
+  @Input() product!: Product;
+  @ViewChild('inputQuantity') inputQuantity!: ElementRef; 
 
+ 
   constructor(   
-    private productService: ProductService, 
     private authService: AuthService,
     private cartService: CartService
   ) {}
 
 
-  ngOnInit(): void {
-    this.productService.listaProdutos().subscribe({
-      next: (response) => {
-        this.products = response;
-      },
-      error: (error) => {
-        this.hasError = true;
-      },
-    });
-  }
-
-
+  // refatorar com output para passar as resp do negocio para o pai 
   addToCart=(product: Product) => {
     this.cartService.addProductCart(product);
   }
-
 
   addItem = (product: Product):void => {
     if(product.quantity == product.stock)
         product.quantity = product.stock;
     else
-      product.quantity++;
+      product.quantity = ++this.inputQuantity.nativeElement.value;
   }
 
   removeItem = (product: Product):void => {
     if(product.quantity==1)
       product.quantity = 1;
     else
-      product.quantity--;
+      product.quantity = --this.inputQuantity.nativeElement.value;
   }
-
   
   accessRole= ():boolean => {
     this.user = this.authService.getUser();

@@ -34,7 +34,7 @@ export class CartComponent implements OnInit {
     );
   }
 
-
+/* 
   addItem(product: Product):void{
     if(product.quantity == product.stock)
         product.quantity = product.stock;
@@ -56,5 +56,5 @@ export class CartComponent implements OnInit {
 
   deleteProduct = (product: Product) => {
     this.cartService.deleteProductCart(product)
-  }
+  } */
 }

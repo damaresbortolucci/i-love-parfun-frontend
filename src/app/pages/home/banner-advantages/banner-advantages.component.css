@@ -1,0 +1,52 @@
+.facility-container{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100%;
+    min-height: 180px;
+    background-color: rgb(225, 225, 225);
+    padding: 30px 50px;
+    flex-wrap: wrap;
+  }
+  
+  .facility-item{
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  
+  .facility-item div{
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .facility-item .facility-logo{
+    border: 1.5px solid black;
+    padding: 5px 15px;
+    border-radius: 50%;
+  }
+  
+  .facility-logo i {
+    font-size: 36px;
+    color: black;
+  }
+  
+  /* Título */
+  .facility-description :nth-child(1){
+    color: #000;
+    font-weight: bold;
+  }
+  
+  .facility-description :nth-child(2){
+    font-size: 16px;
+  }
+  
+  
+  @media screen and (max-width: 1100px){
+    .facility-container{
+      display: flex;
+      justify-content: flex-start;
+      gap: 15px 30px;
+    }
+  }

@@ -1,0 +1,50 @@
+<div class="card card-item" style="width: 18rem;" [ngSwitch]="accessRole()">
+  <img src="{{ product.image }}" height="165px" width="250px" class="card-img-top" alt="Foto de {{ product.title}}">
+  <div class="card-body">  
+    <h5 class="card-title">
+      {{ product.title | titlecase }}
+    </h5>
+    <p class="card-text">
+      {{ product.description }}
+    </p>
+    <div>
+      <span>
+        Valor:
+      </span>
+      <span>
+        {{ product.price | currency:'BRL':'symbol':'1.2-2':'pt'}}
+      </span>
+    </div>
+    <div *ngSwitchCase="false">
+      <span *ngIf="product.stock == 0 ">
+        Sem Estoque
+      </span>
+    </div>
+    <span>
+      Em estoque: {{product.stock}}
+    </span>
+
+    <div class="btn-shop" *ngSwitchCase="true">
+      <div class="quantity-input">
+        <button class="minus" (click)="removeItem(product)">
+          <i class="bi bi-dash"></i>
+        </button>
+        <input 
+          type="number" 
+          class="quantity" 
+          value="1" 
+          max='{{product.stock}}' 
+          name="quantity"
+          inputmode="numeric" 
+          #inputQuantity
+        >
+        <button class="plus" (click)="addItem(product)">
+          <i class="bi bi-plus"></i>
+        </button>
+      </div>
+      <button class="btn-card-home" (click)="addToCart(product)">
+        Comprar
+      </button>
+    </div>
+  </div>
+</div>
