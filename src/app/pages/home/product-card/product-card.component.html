@@ -1,5 +1,7 @@
 <div class="card card-item" style="width: 18rem;" [ngSwitch]="accessRole()">
-  <img src="{{ product.image }}" height="165px" width="250px" class="card-img-top" alt="Foto de {{ product.title}}">
+ <div> 
+  <img src="{{ product.image }}"  class="card-img-top" alt="Foto de {{ product.title}}">
+</div>
   <div class="card-body">  
     <h5 class="card-title">
       {{ product.title | titlecase }}
